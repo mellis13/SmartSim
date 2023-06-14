@@ -89,7 +89,22 @@ def launch_db_model(client: Client, db_model: List[str]):
     if args.outputs:
         outputs = list(args.outputs)
 
-    if args.devices_per_node == 1:
+    # devices_per_node being greater than one only applies
+    # to GPU devices
+    if args.devices_per_node > 1 and args.device.lower() == "gpu":
+        client.set_model_from_file_multigpu(
+            args.name,
+            args.file,
+            args.backend,
+            0,
+            args.devices_per_node,
+            args.batch_size,
+            args.min_batch_size,
+            args.tag,
+            inputs,
+            outputs
+        )
+    else:
         client.set_model_from_file(
             args.name,
             args.file,
@@ -99,21 +114,8 @@ def launch_db_model(client: Client, db_model: List[str]):
             args.min_batch_size,
             args.tag,
             inputs,
-            outputs,
+            outputs
         )
-    else:
-        for device_num in range(args.devices_per_node):
-            client.set_model_from_file(
-                args.name,
-                args.file,
-                args.backend,
-                args.device + f":{device_num}",
-                args.batch_size,
-                args.min_batch_size,
-                args.tag,
-                inputs,
-                outputs,
-            )
 
     return args.name
 
@@ -139,19 +141,15 @@ def launch_db_script(client: Client, db_script: List[str]):
     if args.func:
         func = args.func.replace("\\n", "\n")
 
-        if args.devices_per_node == 1:
+        if args.devices_per_node > 1 and args.device.lower() == "gpu":
+            client.set_script_multigpu(args.name, func, 0, args.devices_per_node)
+        else:
             client.set_script(args.name, func, args.device)
-        else:
-            for device_num in range(args.devices_per_node):
-                client.set_script(args.name, func, args.device + f":{device_num}")
     elif args.file:
-        if args.devices_per_node == 1:
-            client.set_script_from_file(args.name, args.file, args.device)
+        if args.devices_per_node > 1 and args.device.lower() == "gpu":
+            client.set_script_from_file_multigpu(args.name, args.file, 0, args.devices_per_node)
         else:
-            for device_num in range(args.devices_per_node):
-                client.set_script_from_file(
-                    args.name, args.file, args.device + f":{device_num}"
-                )
+            client.set_script_from_file(args.name, args.file, args.device)
 
     return args.name
 
