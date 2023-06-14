@@ -25,6 +25,7 @@ Description
 
 A full list of changes and detailed notes can be found below:
 
+- Update Model API summary in documentation
 - Remove wait time associated with Experiment launch summary
 - Update and rename Redis conf file
 - Migrate from redis-py-cluster to redis-py
@@ -37,6 +38,7 @@ A full list of changes and detailed notes can be found below:
 
 Detailed notes
 
+- Add all user-facing functions to the Model API summary (PR304_)
 - Remove wait time associated with Experiment launch summary (PR298_)
 - Update Redis conf file to conform with Redis v7.0.5 conf file (PR293_)
 - Migrate from redis-py-cluster to redis-py for cluster status checks (PR292_)
@@ -52,9 +54,10 @@ former began deprecation in May 2022 and was finally removed in May 2023. (PR285
 codes. These have now all been updated. (PR284_)
 - Orchestrator and Colocated DB now accept a list of interfaces to bind to. The
 argument name is still `interface` for backward compatibility reasons. (PR281_)
-- Typehints have been added to public APIs. A makefile target to execute static 
+- Typehints have been added to public APIs. A makefile target to execute static
 analysis with mypy is available `make check-mypy`. (PR295_)
 
+.. _PR304: https://github.com/CrayLabs/SmartSim/pull/304
 .. _PR298: https://github.com/CrayLabs/SmartSim/pull/298
 .. _PR293: https://github.com/CrayLabs/SmartSim/pull/293
 .. _PR292: https://github.com/CrayLabs/SmartSim/pull/292
