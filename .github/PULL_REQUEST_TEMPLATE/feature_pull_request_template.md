@@ -18,8 +18,8 @@ The following pull request review steps must be completed before merging the pul
 
  - [ ] Code review for style, design, and accuracy
  - [ ] Unit test review for completeness and accuracy
- - [ ] Verification all Github CI/CD actions passing
- - [ ] Verification external WLM tests passing
+ - [ ] Verification of Github CI/CD actions passing
+ - [ ] Verification of external WLM tests passing
  - [ ] Review of documentation for proper content, build, and rendering
   - [ ] Review of examples for sufficient breadth and accuracy
   - [ ] Independent developer testing for feature stress test
