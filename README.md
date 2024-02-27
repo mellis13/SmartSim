@@ -34,7 +34,7 @@
 
 ------------
 
-# SmartSim
+# SmartSim <a name="readme_smartsim"></a>
 
 SmartSim is made up of two parts
   1. SmartSim Infrastructure Library (This repository)
