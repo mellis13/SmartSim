@@ -62,7 +62,7 @@ exchanged between applications at runtime without the utilization of MPI.
 **Table of Contents**
 - [SmartSim](#smartsim)
 - [Quick Start](#quick-start)
-- [SmartSim Infrastructure Library](#smartsim-infrastructure-library)
+- [SmartSim Infrastructure Library](#readme_smartsim_infra)
   - [Experiments](#experiments)
     - [Hello World](#hello-world)
     - [Hello World MPI](#hello-world-mpi)
