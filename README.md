@@ -105,7 +105,7 @@ docker run -p 8888:8888 ghcr.io/craylabs/smartsim-tutorials:latest
 # click on link to open jupyter lab
 ```
 
-# SmartSim Infrastructure Library
+# SmartSim Infrastructure Library <a name="readme_smartsim_infra"></a>
 
 The Infrastructure Library (IL), the ``smartsim`` python package,
 facilitates the launch of Machine Learning and simulation
