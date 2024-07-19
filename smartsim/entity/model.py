@@ -105,6 +105,8 @@ class Application(SmartSimEntity):
     #TODO Should attached_files_table be deleted and replaced with @property?
     #TODO Put create pinning string into a new ticket for finding a home for it
     #TODO check consistency of variable names and constructor with Ensemble, where appropriate
+    #TODO Unit tests!!! 
+    #TODO Cleanup documentation
 
     @property
     def exe_args(self) -> t.List[str]:
