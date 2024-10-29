@@ -15,6 +15,7 @@ Description
 
 - Implement workaround for Tensorflow that allows RedisAI to build with GCC-14
 - Add instructions for installing SmartSim on PML's Scylla
+- Fix typos in documentation
 
 Detailed Notes
 
@@ -30,6 +31,7 @@ Detailed Notes
   have yet to be installed at a system-wide level. Scylla has
   its own entry in the documentation.
   ([SmartSim-PR733](https://github.com/CrayLabs/SmartSim/pull/733))
+- Fix typos in the `train_surrogate` tutorial documentation
 
 
 ### 0.8.0
